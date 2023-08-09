@@ -93,7 +93,6 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation project(':media-lib-exoplayer')
-    implementation project(':media-lib-decoder-av1')
     implementation 'com.google.vr:sdk-panowidget:1.180.0'
     implementation 'com.google.vr:sdk-videowidget:1.180.0'
     implementation 'org.apache.sanselan:sanselan:0.97-incubator'
