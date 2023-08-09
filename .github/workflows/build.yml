@@ -39,6 +39,15 @@ jobs:
 
     - name: Set environment variables
       run: |
-        tree app/build/outputs
-        echo "APK_SHA256=$(sha256sum app/build/outputs/apk/fossDebug/*.apk | awk '{ print $1 }')" >> $GITHUB_ENV
+        echo "APK_SHA256=$(sha256sum app/build/outputs/apk/foss/debug/*.apk | awk '{ print $1 }')" >> $GITHUB_ENV
 
+    - name: Upload binaries to a release
+      uses: softprops/action-gh-release@v1
+      with:
+        body: |
+          > ${{ github.event.head_commit.message }}
+          
+          * **APK SHA-256 Checksum**: `${{ env.APK_SHA256 }}`
+        files: |
+          app/build/outputs/apk/foss/debug/*.apk
+        tag_name: "${{ github.run_number }}-${{ github.run_id }}"
