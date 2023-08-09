@@ -11,7 +11,8 @@ buildscript {
     }*/
 
     ext.kotlin_version = '1.6.21'
-    ext.is_proprietary = gradle.startParameter.taskNames.any { task -> task.contains("Proprietary") }
+    // ext.is_proprietary = gradle.startParameter.taskNames.any { task -> task.contains("Proprietary") }
+    ext.is_proprietary = false
 
     repositories {
         google()

@@ -1,3 +1,5 @@
 include ':app'
 //include ':commons'
 //project(':commons').projectDir = new File('../Simple-Commons/commons')
+gradle.ext.androidxMediaModulePrefix = 'media-'
+apply from: file("media/core_settings.gradle")
